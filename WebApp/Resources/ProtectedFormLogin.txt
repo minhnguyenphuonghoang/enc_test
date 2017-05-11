@@ -1,0 +1,15 @@
+*** Settings ***
+Resource          Variables.txt
+Variables         ../ObjectMap/protected_form_login.py
+
+*** Keywords ***
+Verify Protected Form Login Screen
+    Wait Until Page Contains Element    ${ProtectedFormLogin_Title}    ${timeout}    The 'title' of Protected Form Login couldn't be found
+    Wait Until Page Contains Element    ${ProtectedFormLogin_Content}    ${timeout}    The 'content' of Protected Form Login couldn't be found
+    Wait Until Page Contains Element    ${ProtectedFormLogin_PasswordTXT}    ${timeout}    The Password text field of Protected Form Login couldn't be found
+    Wait Until Page Contains Element    ${ProtectedFormLogin_SubmitBTN}    ${timeout}    The Submit button of Protected Form Login couldn't be found
+
+Log in protected form
+    [Arguments]    ${password}
+    Input Password    ${ProtectedFormLogin_PasswordTXT}    ${password}
+    Click Element    ${ProtectedFormLogin_SubmitBTN}

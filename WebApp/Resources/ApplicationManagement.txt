@@ -1,0 +1,8 @@
+*** Settings ***
+Resource          Variables.txt
+
+*** Keywords ***
+Open Browser And Navigate To Test Site
+    [Arguments]    ${base_url}=${url}
+    Open Browser    ${base_url}    ${browser}
+    Comment    Set Selenium Speed    0.1

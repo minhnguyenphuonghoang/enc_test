@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          Variables.txt
+Variables         ../ObjectMap/success_form.py
+
+*** Keywords ***
+Verify Success Form Screen
+    Wait Until Page Contains Element    ${SuccessForm_Image}    ${timeout}    The success form couldn't be loaded
+    Page Should Contain    Thank you!
+    Page Should Contain    Your form has been successfully submitted.

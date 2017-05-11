@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170511 23:53:57.781" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Users\NguyenPT\Desktop\Exercise\WebApp\Test_Suites\Test_Suite_001.txt" id="s1" name="Test Suite 001">
+<test id="s1-t1" name="Fill in the form and verify the submited data">
+<kw type="setup" name="Open Browser And Navigate To Test Site" library="ApplicationManagement">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${base_url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20170511 23:53:58.035" level="INFO">Opening browser 'gc' to base url 'https://fs28.formsite.com/ecnvietnam/form1/index.html'</msg>
+<status status="PASS" endtime="20170511 23:54:03.168" starttime="20170511 23:53:58.035"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Selenium Speed</arg>
+<arg>0.1</arg>
+</arguments>
+<status status="PASS" endtime="20170511 23:54:03.169" starttime="20170511 23:54:03.168"></status>
+</kw>
+<status status="PASS" endtime="20170511 23:54:03.170" starttime="20170511 23:53:58.034"></status>
+</kw>
+<kw name="Verify Protected Form Login Screen" library="ProtectedFormLogin">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${ProtectedFormLogin_Title}</arg>
+<arg>${timeout}</arg>
+<arg>The 'title' of Protected Form Login couldn't be found</arg>
+</arguments>
+<status status="PASS" endtime="20170511 23:54:03.209" starttime="20170511 23:54:03.174"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${ProtectedFormLogin_Content}</arg>
+<arg>${timeout}</arg>
+<arg>The 'content' of Protected Form Login couldn't be found</arg>
+</arguments>
+<status status="PASS" endtime="20170511 23:54:03.238" starttime="20170511 23:54:03.210"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${ProtectedFormLogin_PasswordTXT}</arg>
+<arg>${timeout}</arg>
+<arg>The Password text field of Protected Form Login couldn't be found</arg>
+</arguments>
+<status status="PASS" endtime="20170511 23:54:03.269" starttime="20170511 23:54:03.239"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${ProtectedFormLogin_SubmitBTN}</arg>
+<arg>${timeout}</arg>
+<arg>The Submit button of Protected Form Login couldn't be found</arg>
+</arguments>
+<status status="PASS" endtime="20170511 23:54:03.299" starttime="20170511 23:54:03.269"></status>
+</kw>
+<status status="PASS" endtime="20170511 23:54:03.299" starttime="20170511 23:54:03.173"></status>
+</kw>
+<kw name="Log in protected form" library="ProtectedFormLogin">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>${ProtectedFormLogin_PasswordTXT}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:03.301" level="INFO">Typing password into text field '//input[@id="Password"]'</msg>
+<status status="PASS" endtime="20170511 23:54:03.429" starttime="20170511 23:54:03.301"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${ProtectedFormLogin_SubmitBTN}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:03.429" level="INFO">Clicking element '//input[@name="Submit"]'.</msg>
+<status status="PASS" endtime="20170511 23:54:04.593" starttime="20170511 23:54:03.429"></status>
+</kw>
+<status status="PASS" endtime="20170511 23:54:04.594" starttime="20170511 23:54:03.300"></status>
+</kw>
+<kw name="Verify Lead Capture Form Screen" library="LeadCaptureForm">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${LeadCaptureForm_FirstNameTXT}</arg>
+<arg>${timeout}</arg>
+<arg>First name text field on the Lead Capture Form screen couldn't be found</arg>
+</arguments>
+<status status="PASS" endtime="20170511 23:54:04.659" starttime="20170511 23:54:04.597"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${LeadCaptureForm_LastNameTXT}</arg>
+<arg>Last name text field on the Lead Capture Form screen couldn't be found</arg>
+</arguments>
+<msg timestamp="20170511 23:54:04.680" level="INFO">Current page contains element '//form[@id="FSForm"]//label[contains(text(),"Last Name")]/following-sibling::input'.</msg>
+<status status="PASS" endtime="20170511 23:54:04.680" starttime="20170511 23:54:04.659"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${LeadCaptureForm_StreetAddressTXT}</arg>
+<arg>Stree Address text field on the Lead Capture Form screen couldn't be found</arg>
+</arguments>
+<msg timestamp="20170511 23:54:04.709" level="INFO">Current page contains element '//form[@id="FSForm"]//label[contains(text(),"Street Address")]/following-sibling::input'.</msg>
+<status status="PASS" endtime="20170511 23:54:04.709" starttime="20170511 23:54:04.680"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${LeadCaptureForm_AddessLine2Txt}</arg>
+<arg>Address Line 2 text field on the Lead Capture Form screen couldn't be found</arg>
+</arguments>
+<msg timestamp="20170511 23:54:04.732" level="INFO">Current page contains element '//form[@id="FSForm"]//label[contains(text(),"Address Line 2")]/following-sibling::input'.</msg>
+<status status="PASS" endtime="20170511 23:54:04.732" starttime="20170511 23:54:04.709"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${LeadCaptureForm_CityTXT}</arg>
+<arg>City text field on the Lead Capture Form screen couldn't be found</arg>
+</arguments>
+<msg timestamp="20170511 23:54:04.756" level="INFO">Current page contains element '//form[@id="FSForm"]//label[contains(text(),"City")]/following-sibling::input'.</msg>
+<status status="PASS" endtime="20170511 23:54:04.756" starttime="20170511 23:54:04.732"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${LeadCaptureForm_StatetTXT}</arg>
+<arg>State selection box on the Lead Capture Form screen couldn't be found</arg>
+</arguments>
+<msg timestamp="20170511 23:54:04.778" level="INFO">Current page contains element '//form[@id="FSForm"]//label[contains(text(),"State")]/following-sibling::select'.</msg>
+<status status="PASS" endtime="20170511 23:54:04.778" starttime="20170511 23:54:04.756"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${LeadCaptureForm_ZipCodeTXT}</arg>
+<arg>Zip code text field on the Lead Capture Form screen couldn't be found</arg>
+</arguments>
+<msg timestamp="20170511 23:54:04.800" level="INFO">Current page contains element '//form[@id="FSForm"]//label[contains(text(),"Zip Code")]/following-sibling::input'.</msg>
+<status status="PASS" endtime="20170511 23:54:04.800" starttime="20170511 23:54:04.778"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${LeadCaptureForm_PhoneNumberTXT}</arg>
+<arg>Phone number text field on the Lead Capture Form screen couldn't be found</arg>
+</arguments>
+<msg timestamp="20170511 23:54:04.824" level="INFO">Current page contains element '//form[@id="FSForm"]//label[contains(text(),"Phone Number")]/following-sibling::input'.</msg>
+<status status="PASS" endtime="20170511 23:54:04.824" starttime="20170511 23:54:04.801"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${LeadCaptureForm_EmailAddressTXT}</arg>
+<arg>Email address text field on the Lead Capture Form screen couldn't be found</arg>
+</arguments>
+<msg timestamp="20170511 23:54:04.845" level="INFO">Current page contains element '//form[@id="FSForm"]//label[contains(text(),"Email Address")]/following-sibling::input'.</msg>
+<status status="PASS" endtime="20170511 23:54:04.845" starttime="20170511 23:54:04.824"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${LeadCaptureForm_SelectDateOfDemo}</arg>
+<arg>Date of demo selection box on the Lead Capture Form screen couldn't be found</arg>
+</arguments>
+<msg timestamp="20170511 23:54:04.869" level="INFO">Current page contains element '//form[@id="FSForm"]//label[contains(text(),"Select Date of demo")]/following-sibling::input'.</msg>
+<status status="PASS" endtime="20170511 23:54:04.869" starttime="20170511 23:54:04.845"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${LeadCaptureForm_SubmitBTN}</arg>
+<arg>Submit button on the Lead Capture Form screen couldn't be found</arg>
+</arguments>
+<msg timestamp="20170511 23:54:04.890" level="INFO">Current page contains element '//form[@id="FSForm"]//input[@id="FSsubmit"]'.</msg>
+<status status="PASS" endtime="20170511 23:54:04.890" starttime="20170511 23:54:04.869"></status>
+</kw>
+<status status="PASS" endtime="20170511 23:54:04.890" starttime="20170511 23:54:04.596"></status>
+</kw>
+<kw name="Submit Lead Capture Form" library="LeadCaptureForm">
+<arguments>
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${address1}</arg>
+<arg>${address2}</arg>
+<arg>${city}</arg>
+<arg>${state}</arg>
+<arg>${zipcode}</arg>
+<arg>${phonenumber}</arg>
+<arg>${email_address}</arg>
+<arg>${demo_date}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LeadCaptureForm_FirstNameTXT}</arg>
+<arg>${firstname}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:04.893" level="INFO">Typing text 'automamtion_firstname' into text field '//form[@id="FSForm"]//label[contains(text(),"First Name")]/following-sibling::input'</msg>
+<status status="PASS" endtime="20170511 23:54:05.063" starttime="20170511 23:54:04.892"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LeadCaptureForm_LastNameTXT}</arg>
+<arg>${lastname}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:05.064" level="INFO">Typing text 'automation_lastname' into text field '//form[@id="FSForm"]//label[contains(text(),"Last Name")]/following-sibling::input'</msg>
+<status status="PASS" endtime="20170511 23:54:05.214" starttime="20170511 23:54:05.063"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LeadCaptureForm_StreetAddressTXT}</arg>
+<arg>${address1}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:05.215" level="INFO">Typing text 'this is a required address' into text field '//form[@id="FSForm"]//label[contains(text(),"Street Address")]/following-sibling::input'</msg>
+<status status="PASS" endtime="20170511 23:54:05.396" starttime="20170511 23:54:05.214"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LeadCaptureForm_AddessLine2Txt}</arg>
+<arg>${address2}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:05.397" level="INFO">Typing text 'This is an optional address' into text field '//form[@id="FSForm"]//label[contains(text(),"Address Line 2")]/following-sibling::input'</msg>
+<status status="PASS" endtime="20170511 23:54:05.577" starttime="20170511 23:54:05.396"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LeadCaptureForm_CityTXT}</arg>
+<arg>${city}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:05.578" level="INFO">Typing text 'HCMC' into text field '//form[@id="FSForm"]//label[contains(text(),"City")]/following-sibling::input'</msg>
+<status status="PASS" endtime="20170511 23:54:05.681" starttime="20170511 23:54:05.577"></status>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<doc>Selects `*labels` from list identified by `locator`</doc>
+<arguments>
+<arg>${LeadCaptureForm_StatetTXT}</arg>
+<arg>${state}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:05.682" level="INFO">Selecting label(s) 'New York' from list '//form[@id="FSForm"]//label[contains(text(),"State")]/following-sibling::select'.</msg>
+<status status="PASS" endtime="20170511 23:54:05.786" starttime="20170511 23:54:05.681"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LeadCaptureForm_ZipCodeTXT}</arg>
+<arg>${zipcode}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:05.787" level="INFO">Typing text '04000' into text field '//form[@id="FSForm"]//label[contains(text(),"Zip Code")]/following-sibling::input'</msg>
+<status status="PASS" endtime="20170511 23:54:05.878" starttime="20170511 23:54:05.786"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LeadCaptureForm_PhoneNumberTXT}</arg>
+<arg>${phone_number}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:05.879" level="INFO">Typing text '' into text field '//form[@id="FSForm"]//label[contains(text(),"Phone Number")]/following-sibling::input'</msg>
+<status status="PASS" endtime="20170511 23:54:05.962" starttime="20170511 23:54:05.878"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LeadCaptureForm_EmailAddressTXT}</arg>
+<arg>${email_address}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:05.962" level="INFO">Typing text 'automation_emailaddress@yopmail.com' into text field '//form[@id="FSForm"]//label[contains(text(),"Email Address")]/following-sibling::input'</msg>
+<status status="PASS" endtime="20170511 23:54:06.188" starttime="20170511 23:54:05.962"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LeadCaptureForm_SelectDateOfDemo}</arg>
+<arg>${date_of_demo}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:06.189" level="INFO">Typing text '01/01/2018' into text field '//form[@id="FSForm"]//label[contains(text(),"Select Date of demo")]/following-sibling::input'</msg>
+<status status="PASS" endtime="20170511 23:54:06.318" starttime="20170511 23:54:06.188"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${LeadCaptureForm_SubmitBTN}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:06.319" level="INFO">Clicking element '//form[@id="FSForm"]//input[@id="FSsubmit"]'.</msg>
+<status status="PASS" endtime="20170511 23:54:07.506" starttime="20170511 23:54:06.318"></status>
+</kw>
+<status status="PASS" endtime="20170511 23:54:07.506" starttime="20170511 23:54:04.891"></status>
+</kw>
+<kw name="Verify Success Form Screen" library="SuccessForm">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${SuccessForm_Image}</arg>
+<arg>${timeout}</arg>
+<arg>The success form couldn't be loaded</arg>
+</arguments>
+<status status="PASS" endtime="20170511 23:54:07.540" starttime="20170511 23:54:07.510"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Thank you!</arg>
+</arguments>
+<msg timestamp="20170511 23:54:07.564" level="INFO">Current page contains text 'Thank you!'.</msg>
+<status status="PASS" endtime="20170511 23:54:07.564" starttime="20170511 23:54:07.540"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Your form has been successfully submitted.</arg>
+</arguments>
+<msg timestamp="20170511 23:54:07.587" level="INFO">Current page contains text 'Your form has been successfully submitted.'.</msg>
+<status status="PASS" endtime="20170511 23:54:07.588" starttime="20170511 23:54:07.565"></status>
+</kw>
+<status status="PASS" endtime="20170511 23:54:07.588" starttime="20170511 23:54:07.509"></status>
+</kw>
+<kw name="Verify Form Data has been submited successfully" library="RequestAPIs">
+<arguments>
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${address1}</arg>
+<arg>${address2}</arg>
+<arg>${city}</arg>
+<arg>${state}</arg>
+<arg>${zipcode}</arg>
+<arg>${phonenumber}</arg>
+<arg>${email_address}</arg>
+<arg>${demo_date}</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>Api demo</arg>
+<arg>${api_uri}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:07.591" level="INFO">Creating Session using : alias=Api demo, url=https://fs28.formsite.com/api, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20170511 23:54:07.592" starttime="20170511 23:54:07.590"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>Api demo</arg>
+<arg>/users/ecnvietnam/forms/form1/results/?fs_api_key=${api_token}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20170511 23:54:09.752" level="INFO">Get Request using : alias=Api demo, uri=/users/ecnvietnam/forms/form1/results/?fs_api_key=Qm8nO3h6auh7, headers=None json=None</msg>
+<msg timestamp="20170511 23:54:09.753" level="INFO">C:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<msg timestamp="20170511 23:54:09.754" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20170511 23:54:09.754" starttime="20170511 23:54:07.592"></status>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>The response status code is not '200'</arg>
+</arguments>
+<msg timestamp="20170511 23:54:09.756" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20170511 23:54:09.757" starttime="20170511 23:54:09.755"></status>
+</kw>
+<kw name="Element Attribute Should Be" library="XML">
+<doc>Verifies that the specified attribute is ``expected``.</doc>
+<arguments>
+<arg>${response.content}</arg>
+<arg>status</arg>
+<arg>success</arg>
+<arg>.</arg>
+</arguments>
+<status status="PASS" endtime="20170511 23:54:09.782" starttime="20170511 23:54:09.757"></status>
+</kw>
+<kw name="Get Element" library="XML">
+<doc>Returns an element in the ``source`` matching the ``xpath``.</doc>
+<arguments>
+<arg>${response.content}</arg>
+<arg>.//results/result[1]</arg>
+</arguments>
+<assign>
+<var>${expected_node}</var>
+</assign>
+<msg timestamp="20170511 23:54:09.813" level="INFO">${expected_node} = &lt;Element 'result' at 0x03E01E90&gt;</msg>
+<status status="PASS" endtime="20170511 23:54:09.813" starttime="20170511 23:54:09.782"></status>
+</kw>
+<kw name="Element To String" library="XML">
+<doc>Returns the string representation of the specified element.</doc>
+<arguments>
+<arg>${expected_node}</arg>
+</arguments>
+<assign>
+<var>${node_str}</var>
+</assign>
+<msg timestamp="20170511 23:54:09.815" level="INFO">${node_str} = &lt;result id="1212557"&gt;
+&lt;metas&gt;&lt;meta id="result_status"&gt;Complete&lt;/meta&gt;
+&lt;meta id="date_start"&gt;2017-05-11 11:54:07&lt;/meta&gt;
+&lt;meta id="date_finish"&gt;2017-05-11 11:54:09&lt;/meta&gt;
+&lt;meta id="date_update"&gt;2017-05-...</msg>
+<status status="PASS" endtime="20170511 23:54:09.815" starttime="20170511 23:54:09.814"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${node_str}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:09.816" level="INFO">&lt;result id="1212557"&gt;
+&lt;metas&gt;&lt;meta id="result_status"&gt;Complete&lt;/meta&gt;
+&lt;meta id="date_start"&gt;2017-05-11 11:54:07&lt;/meta&gt;
+&lt;meta id="date_finish"&gt;2017-05-11 11:54:09&lt;/meta&gt;
+&lt;meta id="date_update"&gt;2017-05-11 11:54:09&lt;/meta&gt;
+&lt;meta id="user_ip"&gt;27.74.195.5&lt;/meta&gt;
+&lt;meta id="user_browser"&gt;Chrome&lt;/meta&gt;
+&lt;meta id="user_os"&gt;Windows&lt;/meta&gt;
+&lt;meta id="user_referrer"&gt;https://fs28.formsite.com/ecnvietnam/form1/index.html&lt;/meta&gt;
+&lt;meta id="payment_amount"&gt;0.00&lt;/meta&gt;
+&lt;/metas&gt;&lt;items&gt;&lt;item id="17" index="1" type="text"&gt;
+&lt;value&gt;automamtion_firstname&lt;/value&gt;
+&lt;/item&gt;
+&lt;item id="18" index="2" type="text"&gt;
+&lt;value&gt;automation_lastname&lt;/value&gt;
+&lt;/item&gt;
+&lt;item id="19" index="3" type="text"&gt;
+&lt;value&gt;this is a required address&lt;/value&gt;
+&lt;/item&gt;
+&lt;item id="20" index="4" type="text"&gt;
+&lt;value&gt;This is an optional address&lt;/value&gt;
+&lt;/item&gt;
+&lt;item id="21" index="5" type="text"&gt;
+&lt;value&gt;HCMC&lt;/value&gt;
+&lt;/item&gt;
+&lt;item id="22" index="6" type="list"&gt;
+&lt;value index="31"&gt;New York&lt;/value&gt;
+&lt;/item&gt;
+&lt;item id="23" index="7" type="text"&gt;
+&lt;value&gt;04000&lt;/value&gt;
+&lt;/item&gt;
+&lt;item id="25" index="9" type="text"&gt;
+&lt;value&gt;automation_emailaddress@yopmail.com&lt;/value&gt;
+&lt;/item&gt;
+&lt;item id="27" index="10" type="text"&gt;
+&lt;value&gt;01/01/2018&lt;/value&gt;
+&lt;/item&gt;
+&lt;/items&gt;&lt;/result&gt;</msg>
+<status status="PASS" endtime="20170511 23:54:09.817" starttime="20170511 23:54:09.816"></status>
+</kw>
+<kw name="Get Element Text" library="XML">
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<arguments>
+<arg>&lt;xml&gt;${node_str}&lt;/xml&gt;</arg>
+<arg>./result/items/item[1]/value</arg>
+</arguments>
+<assign>
+<var>${current_firstname}</var>
+</assign>
+<msg timestamp="20170511 23:54:09.818" level="INFO">${current_firstname} = automamtion_firstname</msg>
+<status status="PASS" endtime="20170511 23:54:09.818" starttime="20170511 23:54:09.817"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${current_firstname}</arg>
+</arguments>
+<msg timestamp="20170511 23:54:09.819" level="INFO">automamtion_firstname</msg>
+<status status="PASS" endtime="20170511 23:54:09.819" starttime="20170511 23:54:09.819"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_firstname}</arg>
+<arg>${expected_firstname}</arg>
+<arg>First name is submitted incorrectly</arg>
+</arguments>
+<msg timestamp="20170511 23:54:09.820" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20170511 23:54:09.821" starttime="20170511 23:54:09.820"></status>
+</kw>
+<kw name="Get Element Text" library="XML">
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<arguments>
+<arg>&lt;xml&gt;${node_str}&lt;/xml&gt;</arg>
+<arg>./result/items/item[2]/value</arg>
+</arguments>
+<assign>
+<var>${current_lastname}</var>
+</assign>
+<msg timestamp="20170511 23:54:09.822" level="INFO">${current_lastname} = automation_lastname</msg>
+<status status="PASS" endtime="20170511 23:54:09.822" starttime="20170511 23:54:09.821"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_lastname}</arg>
+<arg>${expected_lastname}</arg>
+<arg>Last name is submitted incorrectly</arg>
+</arguments>
+<msg timestamp="20170511 23:54:09.823" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20170511 23:54:09.824" starttime="20170511 23:54:09.823"></status>
+</kw>
+<kw name="Get Element Text" library="XML">
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<arguments>
+<arg>&lt;xml&gt;${node_str}&lt;/xml&gt;</arg>
+<arg>./result/items/item[3]/value</arg>
+</arguments>
+<assign>
+<var>${current_address1}</var>
+</assign>
+<msg timestamp="20170511 23:54:09.827" level="INFO">${current_address1} = this is a required address</msg>
+<status status="PASS" endtime="20170511 23:54:09.827" starttime="20170511 23:54:09.824"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_address1}</arg>
+<arg>${expected_address1}</arg>
+<arg>Address 1 is submitted incorrectly</arg>
+</arguments>
+<msg timestamp="20170511 23:54:09.829" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20170511 23:54:09.829" starttime="20170511 23:54:09.828"></status>
+</kw>
+<kw name="Get Element Text" library="XML">
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<arguments>
+<arg>&lt;xml&gt;${node_str}&lt;/xml&gt;</arg>
+<arg>./result/items/item[4]/value</arg>
+</arguments>
+<assign>
+<var>${current_address2}</var>
+</assign>
+<msg timestamp="20170511 23:54:09.832" level="INFO">${current_address2} = This is an optional address</msg>
+<status status="PASS" endtime="20170511 23:54:09.832" starttime="20170511 23:54:09.830"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_address2}</arg>
+<arg>${expected_address2}</arg>
+<arg>Address 2 is submitted incorrectly</arg>
+</arguments>
+<msg timestamp="20170511 23:54:09.833" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20170511 23:54:09.834" starttime="20170511 23:54:09.832"></status>
+</kw>
+<kw name="Get Element Text" library="XML">
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<arguments>
+<arg>&lt;xml&gt;${node_str}&lt;/xml&gt;</arg>
+<arg>./result/items/item[5]/value</arg>
+</arguments>
+<assign>
+<var>${current_city}</var>
+</assign>
+<msg timestamp="20170511 23:54:09.835" level="INFO">${current_city} = HCMC</msg>
+<status status="PASS" endtime="20170511 23:54:09.835" starttime="20170511 23:54:09.834"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_city}</arg>
+<arg>${expected_city}</arg>
+<arg>City is submitted incorrectly</arg>
+</arguments>
+<msg timestamp="20170511 23:54:09.836" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20170511 23:54:09.837" starttime="20170511 23:54:09.836"></status>
+</kw>
+<kw name="Get Element Text" library="XML">
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<arguments>
+<arg>&lt;xml&gt;${node_str}&lt;/xml&gt;</arg>
+<arg>./result/items/item[6]/value</arg>
+</arguments>
+<assign>
+<var>${current_state}</var>
+</assign>
+<msg timestamp="20170511 23:54:09.838" level="INFO">${current_state} = New York</msg>
+<status status="PASS" endtime="20170511 23:54:09.838" starttime="20170511 23:54:09.837"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_state}</arg>
+<arg>${expected_state}</arg>
+<arg>State is submitted incorrectly</arg>
+</arguments>
+<msg timestamp="20170511 23:54:09.840" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20170511 23:54:09.841" starttime="20170511 23:54:09.839"></status>
+</kw>
+<kw name="Get Element Text" library="XML">
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<arguments>
+<arg>&lt;xml&gt;${node_str}&lt;/xml&gt;</arg>
+<arg>./result/items/item[7]/value</arg>
+</arguments>
+<assign>
+<var>${current_zipcode}</var>
+</assign>
+<msg timestamp="20170511 23:54:09.842" level="INFO">${current_zipcode} = 04000</msg>
+<status status="PASS" endtime="20170511 23:54:09.843" starttime="20170511 23:54:09.841"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_zipcode}</arg>
+<arg>${expected_zipcode}</arg>
+<arg>Zip code is submitted incorrectly</arg>
+</arguments>
+<msg timestamp="20170511 23:54:09.844" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20170511 23:54:09.844" starttime="20170511 23:54:09.843"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${current_phonenumber}=</arg>
+<arg>XML.Get Element Text</arg>
+<arg>&lt;xml&gt;${node_str}&lt;/xml&gt;</arg>
+<arg>./result/items/item[8]/value</arg>
+</arguments>
+<status status="PASS" endtime="20170511 23:54:09.845" starttime="20170511 23:54:09.844"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Should Be Equal As Strings</arg>
+<arg>${current_phonenumber}</arg>
+<arg>${expected_phonenumber}</arg>
+<arg>Phone number is submitted incorrectly</arg>
+</arguments>
+<status status="PASS" endtime="20170511 23:54:09.846" starttime="20170511 23:54:09.845"></status>
+</kw>
+<kw name="Get Element Text" library="XML">
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<arguments>
+<arg>&lt;xml&gt;${node_str}&lt;/xml&gt;</arg>
+<arg>./result/items/item[8]/value</arg>
+</arguments>
+<assign>
+<var>${current_emailaddress}</var>
+</assign>
+<msg timestamp="20170511 23:54:09.847" level="INFO">${current_emailaddress} = automation_emailaddress@yopmail.com</msg>
+<status status="PASS" endtime="20170511 23:54:09.847" starttime="20170511 23:54:09.846"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_emailaddress}</arg>
+<arg>${expected_emailaddress}</arg>
+<arg>Email address is submitted incorrectly</arg>
+</arguments>
+<msg timestamp="20170511 23:54:09.848" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20170511 23:54:09.849" starttime="20170511 23:54:09.848"></status>
+</kw>
+<kw name="Get Element Text" library="XML">
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<arguments>
+<arg>&lt;xml&gt;${node_str}&lt;/xml&gt;</arg>
+<arg>./result/items/item[9]/value</arg>
+</arguments>
+<assign>
+<var>${current_demodate}</var>
+</assign>
+<msg timestamp="20170511 23:54:09.851" level="INFO">${current_demodate} = 01/01/2018</msg>
+<status status="PASS" endtime="20170511 23:54:09.851" starttime="20170511 23:54:09.849"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_demodate}</arg>
+<arg>${expected_demodate}</arg>
+<arg>Demo date is submitted incorrectly</arg>
+</arguments>
+<msg timestamp="20170511 23:54:09.852" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20170511 23:54:09.852" starttime="20170511 23:54:09.851"></status>
+</kw>
+<status status="PASS" endtime="20170511 23:54:09.852" starttime="20170511 23:54:07.589"></status>
+</kw>
+<kw type="teardown" name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20170511 23:54:13.018" starttime="20170511 23:54:09.854"></status>
+</kw>
+<status status="PASS" endtime="20170511 23:54:13.019" critical="yes" starttime="20170511 23:53:58.033"></status>
+</test>
+<status status="PASS" endtime="20170511 23:54:13.024" starttime="20170511 23:53:57.786"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Test Suite 001" pass="1">Test Suite 001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

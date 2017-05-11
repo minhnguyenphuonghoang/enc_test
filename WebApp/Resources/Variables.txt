@@ -1,0 +1,13 @@
+*** Settings ***
+Library           Selenium2Library
+Library           RequestsLibrary
+Resource          ProtectedFormLogin.txt
+Resource          LeadCaptureForm.txt
+Resource          SuccessForm.txt
+Resource          ApplicationManagement.txt
+
+*** Variables ***
+${browser}        gc
+${url}            https://fs28.formsite.com/ecnvietnam/form1/index.html
+${timeout}        15s
+${password}       secret

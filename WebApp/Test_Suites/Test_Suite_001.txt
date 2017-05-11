@@ -1,0 +1,16 @@
+*** Settings ***
+Resource          ../Resources/Variables.txt
+Resource          ../Resources/RequestAPIs.txt
+
+*** Test Cases ***
+Fill in the form and verify the submited data
+    [Setup]    Open Browser And Navigate To Test Site
+    Verify Protected Form Login Screen
+    Log in protected form    ${password}
+    Verify Lead Capture Form Screen
+    Submit Lead Capture Form    ${first_name}    ${last_name}    ${address1}    ${address2}    ${city}    ${state}
+    ...    ${zipcode}    ${phonenumber}    ${email_address}    ${demo_date}
+    Verify Success Form Screen
+    Verify Form Data has been submited successfully    ${first_name}    ${last_name}    ${address1}    ${address2}    ${city}    ${state}
+    ...    ${zipcode}    ${phonenumber}    ${email_address}    ${demo_date}
+    [Teardown]    Close All Browsers

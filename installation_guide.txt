@@ -1,0 +1,39 @@
+# Author: Minh.Nguyen
+# Email Address: minhnguyenphuonghoang@gmail.com
+# Skype: live:minhnph
+
+To install robot framework, you need to install python and wxpython.
+
+1. Install Python 2.7.x
+- Go to Python download site https://www.python.org/downloads/ and download the latest version of python 2.7.x
+- install Python to your system
+- Add C:\Python27 and C:\Python27\Scripts to the system environment path (if you're using linux env, add python and python\script to the system environment path if you already have another version of python in your system. DO NOT use the default python on MAC!)
+
+- to verify the installation step, open terminal (or cmd) and type in: 
+$ python
+If no errors occurs, Python is successfully installed to your system.
+
+2. Install wxpython 
+- Go to the following site https://sourceforge.net/projects/wxpython/files/wxPython/2.8.12.1/
+- Download corresponding wxpython for the installed python version. Attention, you must select the suitable version (32 bits vs 64 bits of wxpython by the installed python 32 or 64 bits)
+- Install it to your system
+
+Install Robot Framework and its dependencies
+1. Install robot framework
+- open terminal or cmd. Type in
+$ pip install -U robotframework
+$ pip install -U robotfrarmework-selenium2library
+$ pip install -U requests
+$ pip install -U robotframework-requests
+- verify installation, open terminal or cmd (exit all existed instances then open a new one), type in
+$ pybot --version
+
+2. Download and add chromedriver to the system environment path
+- Go to chrome driver site https://sites.google.com/a/chromium.org/chromedriver/downloads
+- Download the corresponding chromedriver to your machine
+- Extract the zip file and add the path to the executable file to the system environment path (On Windows, you can make a copy then paste it on the C:\Python27 or C:\Python27\Scipts)
+
+To run test cases, you have 2 options:
+- Option one: open the Downloaded attachment file, unzip then open the run_test.bat file
+- Option two: open terminal or cmd navigate to the test script then run
+$ pybot <path_to_test_suite_file>

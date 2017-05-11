@@ -1,0 +1,44 @@
+*** Settings ***
+Resource          Variables.txt
+Variables         ../ObjectMap/lead_capture_form.py
+
+*** Variables ***
+${first_name}     automamtion_firstname
+${last_name}      automation_lastname
+${address1}       this is a required address
+${address2}       This is an optional address
+${city}           HCMC
+${state}          New York
+${zipcode}        04000
+${phonenumber}    ${EMPTY}
+${email_address}    automation_emailaddress@yopmail.com
+${demo_date}      01/01/2018
+
+*** Keywords ***
+Verify Lead Capture Form Screen
+    Wait Until Page Contains Element    ${LeadCaptureForm_FirstNameTXT}    ${timeout}    First name text field on the Lead Capture Form screen couldn't be found
+    Page Should Contain Element    ${LeadCaptureForm_LastNameTXT}    Last name text field on the Lead Capture Form screen couldn't be found
+    Page Should Contain Element    ${LeadCaptureForm_StreetAddressTXT}    Stree Address text field on the Lead Capture Form screen couldn't be found
+    Page Should Contain Element    ${LeadCaptureForm_AddessLine2Txt}    Address Line 2 text field on the Lead Capture Form screen couldn't be found
+    Page Should Contain Element    ${LeadCaptureForm_CityTXT}    City text field on the Lead Capture Form screen couldn't be found
+    Page Should Contain Element    ${LeadCaptureForm_StatetTXT}    State selection box on the Lead Capture Form screen couldn't be found
+    Page Should Contain Element    ${LeadCaptureForm_ZipCodeTXT}    Zip code text field on the Lead Capture Form screen couldn't be found
+    Page Should Contain Element    ${LeadCaptureForm_PhoneNumberTXT}    Phone number text field on the Lead Capture Form screen couldn't be found
+    Page Should Contain Element    ${LeadCaptureForm_EmailAddressTXT}    Email address text field on the Lead Capture Form screen couldn't be found
+    Page Should Contain Element    ${LeadCaptureForm_SelectDateOfDemo}    Date of demo selection box on the Lead Capture Form screen couldn't be found
+    Page Should Contain Element    ${LeadCaptureForm_SubmitBTN}    Submit button on the Lead Capture Form screen couldn't be found
+
+Submit Lead Capture Form
+    [Arguments]    ${firstname}    ${lastname}    ${address1}    ${address2}    ${city}    ${state}
+    ...    ${zipcode}    ${phone_number}    ${email_address}    ${date_of_demo}
+    Input Text    ${LeadCaptureForm_FirstNameTXT}    ${firstname}
+    Input Text    ${LeadCaptureForm_LastNameTXT}    ${lastname}
+    Input Text    ${LeadCaptureForm_StreetAddressTXT}    ${address1}
+    Input Text    ${LeadCaptureForm_AddessLine2Txt}    ${address2}
+    Input Text    ${LeadCaptureForm_CityTXT}    ${city}
+    Select From List By Label    ${LeadCaptureForm_StatetTXT}    ${state}
+    Input Text    ${LeadCaptureForm_ZipCodeTXT}    ${zipcode}
+    Input Text    ${LeadCaptureForm_PhoneNumberTXT}    ${phone_number}
+    Input Text    ${LeadCaptureForm_EmailAddressTXT}    ${email_address}
+    Input Text    ${LeadCaptureForm_SelectDateOfDemo}    ${date_of_demo}
+    Click Element    ${LeadCaptureForm_SubmitBTN}

@@ -1,0 +1,42 @@
+*** Settings ***
+Library           RequestsLibrary
+Library           XML
+
+*** Variables ***
+${api_uri}        https://fs28.formsite.com/api
+${api_token}      Qm8nO3h6auh7
+
+*** Keywords ***
+Verify Form Data has been submited successfully
+    [Arguments]    ${expected_firstname}    ${expected_lastname}    ${expected_address1}    ${expected_address2}    ${expected_city}    ${expected_state}
+    ...    ${expected_zipcode}    ${expected_phonenumber}    ${expected_emailaddress}    ${expected_demodate}
+    Create Session    Api demo    ${api_uri}
+    ${response}=    RequestsLibrary.Get Request    Api demo    /users/ecnvietnam/forms/form1/results/?fs_api_key=${api_token}
+    # 1. verify status code
+    Should Be Equal As Numbers    ${response.status_code}    200    The response status code is not '200'
+    Element Attribute Should Be    ${response.content}    status    success    .
+    # 2. verify content
+    ${expected_node}=    XML.Get Element    ${response.content}    .//results/result[1]
+    ${node_str}=    XML.Element To String    ${expected_node}
+    Log    ${node_str}
+    ${current_firstname}=    XML.Get Element Text    <xml>${node_str}</xml>    ./result/items/item[1]/value
+    Log    ${current_firstname}
+    Should Be Equal As Strings    ${current_firstname}    ${expected_firstname}    First name is submitted incorrectly
+    ${current_lastname}=    XML.Get Element Text    <xml>${node_str}</xml>    ./result/items/item[2]/value
+    Should Be Equal As Strings    ${current_lastname}    ${expected_lastname}    Last name is submitted incorrectly
+    ${current_address1}=    XML.Get Element Text    <xml>${node_str}</xml>    ./result/items/item[3]/value
+    Should Be Equal As Strings    ${current_address1}    ${expected_address1}    Address 1 is submitted incorrectly
+    ${current_address2}=    XML.Get Element Text    <xml>${node_str}</xml>    ./result/items/item[4]/value
+    Should Be Equal As Strings    ${current_address2}    ${expected_address2}    Address 2 is submitted incorrectly
+    ${current_city}=    XML.Get Element Text    <xml>${node_str}</xml>    ./result/items/item[5]/value
+    Should Be Equal As Strings    ${current_city}    ${expected_city}    City is submitted incorrectly
+    ${current_state}=    XML.Get Element Text    <xml>${node_str}</xml>    ./result/items/item[6]/value
+    Should Be Equal As Strings    ${current_state}    ${expected_state}    State is submitted incorrectly
+    ${current_zipcode}=    XML.Get Element Text    <xml>${node_str}</xml>    ./result/items/item[7]/value
+    Should Be Equal As Strings    ${current_zipcode}    ${expected_zipcode}    Zip code is submitted incorrectly
+    Comment    ${current_phonenumber}=    XML.Get Element Text    <xml>${node_str}</xml>    ./result/items/item[8]/value
+    Comment    Should Be Equal As Strings    ${current_phonenumber}    ${expected_phonenumber}    Phone number is submitted incorrectly
+    ${current_emailaddress}=    XML.Get Element Text    <xml>${node_str}</xml>    ./result/items/item[8]/value
+    Should Be Equal As Strings    ${current_emailaddress}    ${expected_emailaddress}    Email address is submitted incorrectly
+    ${current_demodate}=    XML.Get Element Text    <xml>${node_str}</xml>    ./result/items/item[9]/value
+    Should Be Equal As Strings    ${current_demodate}    ${expected_demodate}    Demo date is submitted incorrectly
